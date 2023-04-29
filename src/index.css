@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Pacifico&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html{
+        font-family: 'Poppins', sans-serif;
+    }
+    .container{
+        padding-top:5rem;
+        @apply max-[600px]:p-[1rem]
+    }
+    .hero-bg {
+        background-image: linear-gradient(0.2deg, rgba(40, 173, 222, 1) 4.8%, rgb(27, 76, 224) 85.5%);
+    }
+    .clip-path{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 65%);
+    }
+    .hero-home-text{
+        @apply text-gray-100 text-7xl max-[1024px]:text-5xl max-[800px]:text-3xl tracking-wide font-bold flex justify-center flex-col items-center 
+        text-center max-[300px]:text-xl
+        ; 
+
+        
+    }
+    .hero-home-img{
+        @apply object-cover  w-[35%] m-auto -rotate-[25deg] hover:rotate-0 transition-all ease-in-out duration-500 delay-100 cursor-pointer
+        lg:top-10 relative sm:top-32 max-[600px]:top-16; 
+    }
+
+    .hero-home-btn{
+        @apply rounded-md border-2 w-[11rem] px-2 py-1
+             border-gray-200 m-auto bg-slate-200 hover:bg-slate-50
+                transition-all ease-in-out duration-300 delay-100 hover:text-slate-600
+               hover:shadow-lg hover:shadow-slate-100
+               active:bg-slate-200 active:shadow-none active:text-black
+               max-[300px]:scale-50
+    }
+    .play-icon{
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+        transition-duration:.5s;
+        transition-property: opacity;
+        transition-timing-function: ease-in-out;
+
+    }
+  
+}
