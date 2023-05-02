@@ -8,7 +8,6 @@
         font-family: 'Poppins', sans-serif;
     }
     .container{
-        padding-top:5rem;
         @apply max-[600px]:p-[1rem]
     }
     .hero-bg {
@@ -45,6 +44,10 @@
         transition-property: opacity;
         transition-timing-function: ease-in-out;
 
+    }
+
+    .transition-theme{
+        @apply transition-all ease-in-out duration-1000 delay-100
     }
   
 }
