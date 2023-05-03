@@ -1,12 +1,10 @@
 import Item from "./Item"
-
+import Title from "../../components/Title"
 const Sales = ({ popularsales ,value: {title,  items}}) => {
     
   return (
     <div className={`relative container px-[3rem] m-auto`}>
-        <div>
-            <h1 className="font-bold text-5xl text-slate-900 pb-5">{title}</h1>
-        </div>
+        <Title title={title}/>
         <div className={!popularsales ? ` grid grid-cols-4 gap-9 `: `grid grid-cols-3 gap-7`}>
             {
                 items.map((item, index)=>(

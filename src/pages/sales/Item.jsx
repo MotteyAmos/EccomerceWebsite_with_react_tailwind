@@ -1,8 +1,17 @@
 import { ShoppingBagIcon, StarIcon } from "@heroicons/react/24/solid";
+import { useDispatch } from "react-redux";
+import { addItem } from "../../features/cartSlice";
 
 const Item = ({popularsales,
   values: { id, title, text, rating, btn, img, price, color, shadow },
 }) => {
+
+  const dispatch = useDispatch(addItem);
+
+  const onAddItem = ()=>{
+    dispatch(addItem({ id, title, text, rating, btn, img, price, color, shadow, quantity }))
+  }
+
   return (
     <div
       className={`bg-gradient-to-t ${color} ${shadow} w-full h-[18rem] 
@@ -29,6 +38,7 @@ const Item = ({popularsales,
             <button
               className="bg-slate-100  text-slate-700 p-1 rounded text-sm 
             active:scale-90 transition-all ease-in-out duration-75"
+            onClick={()=>onAddItem()}
             >
               {btn}
             </button>

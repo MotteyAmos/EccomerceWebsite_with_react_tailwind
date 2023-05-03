@@ -49,5 +49,7 @@
     .transition-theme{
         @apply transition-all ease-in-out duration-1000 delay-100
     }
-  
+  .cart-transition-theme{
+    @apply transition-all ease-in-out duration-700 delay-300
+  }
 }
