@@ -11,17 +11,17 @@ import Footer from "./pages/footer/Footer";
 import { footerAPI } from "./data/data";
 import Navigation from "./pages/Navigation";
 import Cart from "./pages/cart/Cart";
-import { store } from "./App/store";
-import { Provider } from "react-redux";
+import { Toaster } from "react-hot-toast";
+
 
 const App = () => {
   return (
     <>
-      <Provider store={store}>
-        <div className="relative">
+        <div className="relative w-screen">
+          <Toaster position="top-center" reverseOrder={false}/>
           <Cart />
           <Navigation />
-          <div className="grid gap-[7rem]  ">
+          <div className={`grid gap-y-[7rem] overflow-y-hidden`}>
             <HeroHomePage heroApi={heroApi} />
             <Sales value={popularsales} popularsales={true} />
             <Features value={highlight} ishighlight />
@@ -32,7 +32,6 @@ const App = () => {
             <Footer value={footerAPI} />
           </div>
         </div>
-      </Provider>
     </>
   );
 };

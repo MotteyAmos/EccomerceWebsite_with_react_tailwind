@@ -1,10 +1,10 @@
 const Features = ({ishighlight, value: { heading, title, text, btn, url, img } }) => {
   return (
-    <div className={` flex container px-[3rem] m-auto justify-between ${ishighlight && "flex-row-reverse "}`}>
-      <div className={` w-[35%] grid gap-4 `}>
+    <div className={` flex container px-[3rem] max-md:px-4 m-auto  justify-between max-md:flex-col ${ishighlight && "flex-row-reverse "}`}>
+      <div className={` w-[35%] max-md:w-[20rem] m-auto grid gap-4 `}>
         <div>
-          <h3 className="font-bold text-4xl text-sky-500">{heading}</h3>
-          <h1 className="font-bold text-5xl text-slate-950">{title}</h1>
+          <h3 className="font-bold text-4xl max-md:text-2xl  text-sky-500">{heading}</h3>
+          <h1 className="font-bold text-5xl max-md:text-3xl text-slate-950">{title}</h1>
         </div>
 
         <div>
@@ -17,10 +17,10 @@ const Features = ({ishighlight, value: { heading, title, text, btn, url, img } }
           </a>
         </div>
       </div>
-        <div className="relative grid items-center w-[25rem]">
+        <div className="relative grid items-center w-[25rem] max-md:w-full max-md:justify-center">
             <img src={img} alt={`img/${heading}`}  
-            className={`w-[25rem] absolute  top-8 right-[10rem] rotate-[15deg] hover:scale-110 transition-theme
-            ${ishighlight && "left-[10rem] rotate-[15deg] hover:scale-110"}`}/>
+            className={`w-[25rem] absolute  top-8 max-md:top-0 max-md:relative right-[10rem] max-md:right-[4rem] md:right-0 max-md:scale-50  rotate-[15deg] hover:scale-110 transition-theme
+            ${ishighlight && "left-[10rem] max-md:left-0  md:left-0 rotate-[15deg] hover:scale-110 max-md:relative "}`}/>
 
         </div>
     </div>

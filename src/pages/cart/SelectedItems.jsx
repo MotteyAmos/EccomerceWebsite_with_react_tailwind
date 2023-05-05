@@ -5,11 +5,11 @@ import SelectedItem from "./SelectedItem";
 
 const SelectedItems = () => {
     const items = useSelector(selectSelectedItems);
-   console.log(items)
+
   return (
-    <div className="pr-10">
+    <div className="pr-10 ">
         {
-            items && (
+            (items.length >0) && (
                 
                 items.map((item, id)=>{
                     return (<SelectedItem values={item} key={id}/>)

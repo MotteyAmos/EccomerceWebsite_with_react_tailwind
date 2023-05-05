@@ -3,24 +3,37 @@ import CartFooter from "./CartFooter";
 import CartHeader from "./CartHeader";
 import { selectCartState } from "../../features/cartSlice";
 import { useSelector } from "react-redux";
-import { selectSelectedItems } from "../../features/cartSlice";
+import { selectSelectedItems, selectTotalPrice} from "../../features/cartSlice";
 import SelectedItems from "./SelectedItems";
+
 
 const Cart = () => {
   const cartState = useSelector(selectCartState);
-  const ifItemsSelected = useSelector(selectSelectedItems)
+  const ifItemsSelected = useSelector(selectSelectedItems);
+  const totalPrice = useSelector(selectTotalPrice);
+  
   return (
     <div
-      className={ cartState ?`fixed top-0 right-0 left-0 z-[500] opacity-100 filter backdrop-blur-lg bg-white/10 cart-transition-theme 
-      h-screen w-screen `: "z-[0] fixed opacity-0  w-[0px] h-0 cart-transition-theme  " }
+      className={
+        cartState
+          ? `fixed top-0 right-0  left-0 z-[500] opacity-100 filter backdrop-blur-lg bg-white/10 cart-transition-theme 
+      h-screen w-screen overflow-y-hidden `
+          : "z-[0] fixed opacity-0  w-[0px] h-0 cart-transition-theme  "
+      }
     >
-      <div className={cartState ?"right-0 fixed w-[40%] h-screen filter backdrop-blur-lg bg-white/90 drop-shadow-2xl  cart-transition-theme opacity-100":"opacity-0 right-0 fixed w-[0px] z-[0] h-[0px] cart-transition-theme" }>
-        <CartHeader />
-        {
-          (ifItemsSelected.length <=0) ? (<CartBag />): (<SelectedItems/>)
+      <div
+        className={
+          cartState
+            ? "right-0 fixed w-[40%] max-md:w-screen   md:w-[50rem] h-screen filter backdrop-blur-lg bg-white/90 drop-shadow-2xl  cart-transition-theme opacity-100 "
+            : "opacity-0 right-0 fixed w-[0px] z-[0] h-[0px] cart-transition-theme"
         }
-        
-        <CartFooter />
+      >
+        <CartHeader   totalPrice={totalPrice}/>
+        <div className="overflow-y-scroll h-[70%] overscroll-y-contain   md:ml-[5rem]  removeScrollBar">
+          {ifItemsSelected.length <= 0 ? <CartBag /> : <SelectedItems />}
+        </div>
+
+        <CartFooter totalPrice={totalPrice} />
       </div>
     </div>
   );

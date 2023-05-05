@@ -14,10 +14,22 @@ export default {
       },
 
       screen:{
-        'sm':{"max": "920px"},
-        'xl':{'max':'1200px'},
-        'lg':{"max": '991px'},
-        'xsm':{"max":"600px"},
+        'sm':{'max': '639px'},
+        'md': {'max': '770px'},
+        // => @media (max-width: 767px) { ... }
+  
+        
+        // => @media (max-width: 639px) { ... }
+  
+        'lg': {'max':'1024px'},
+        // => @media (min-width: 1024px) { ... }
+  
+        'xl': '1280px',
+        // => @media (min-width: 1280px) { ... }
+  
+        '2xl': '1536px',
+        // => @media (min-width: 1536px) { ... }
+        
         
       }
     },

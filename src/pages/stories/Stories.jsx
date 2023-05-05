@@ -11,16 +11,23 @@ const Stories = ({story:{title,news}}) => {
     perpage:3,
     fixedWidth : '7rem',
    
-    gap        : '17rem',
+    gap        : '15rem ',
     keyboard:'global',
-    perMove:1
+    perMove:1,
+    breakpoints:{
+      1200:{perPage:3},
+      991:{perPage:2.3},
+      768:{perPage:2},
+      500:{perPage:1.3},
+      625:{perPage:1},
+  }
 
   } 
   return (
-    <div className="w-full container px-[3rem] m-auto ">
+    <div className="w-screen max-md:text-center container px-[3rem] max-md:px-[1rem] m-auto ">
         <Title title={title}/>
         <div  className=" ">
-          <Splide options={options}>
+          <Splide options={options} >
           {
                 news.map((eachStory, index)=>{
                     return(

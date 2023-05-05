@@ -9,8 +9,8 @@ const Story = ({
     <>
       <SplideSlide>
         <div
-          className="w-[22.7rem] rounded-lg overflow-hidden border-2 filter drop-shadow-md 
-       flex flex-col gap-[16px]  h-[32.5rem]  "
+          className="w-[22.7rem] max-md:w-[20rem] rounded-lg overflow-hidden border-2 filter drop-shadow-md 
+       flex flex-col gap-[16px]  h-[32.5rem] max-md:gap-[25px]  md:scale-90  "
         >
           <div className=" w-full">
             <img src={img} alt={`story/img/${title}`} className="w-full" />
